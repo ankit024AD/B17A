@@ -1,0 +1,47 @@
+<div class="bg" style="width: 80%;">
+  <h1> Book Details</h1>
+</div>
+<div class="card rp" style="width: 80%;">
+
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-3 col-sm-12 ">
+        <img style="width:100%" [src]='"https://bookcart.azurewebsites.net/Upload/"+detailId.coverFileName'>
+      </div>
+
+
+
+
+      <div class="col-md-5 col-sm-12">
+        <div>Title-{{detailId.title}}</div>
+        <div>Author-{{detailId.author}}</div>
+        <div>Category-{{detailId.category}}</div>
+        <div>Price-{{detailId.price}}</div>
+        <button class = "btn btn-primary "><span style="size: 1px;" class="material-icons">shopping_cart</span>Add to cart</button>
+        <button class = "btn btn-primary ">Add to Whislist</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="bg" style="width: 80%;">
+  <h1> Similar Books</h1>
+</div>
+<div class="card rp" style="width: 80%;">
+
+  <div class="card-body">
+    <div class="row">
+      <div class="card" style="width: 20%;" *ngFor="let item of similarId">
+        <img style="width: 100%;" [src]='"https://bookcart.azurewebsites.net/Upload/"+item.coverFileName'>
+        <div class="card-body" >
+
+          <p style="color: blue;"><b>{{item.title}}</b></p>
+          <p>{{item.price}}</p>
+          <button class = "btn btn-secondary "><span class="material-icons">shopping_cart</span>Add to cart</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
