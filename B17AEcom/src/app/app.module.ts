@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BookdetailComponent } from './bookdetail/bookdetail.component';
 import { DataService } from './data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { materialize } from 'rxjs';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
- 
+    
   
   ],
   providers: [DataService],

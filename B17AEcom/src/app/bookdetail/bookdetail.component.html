@@ -1,44 +1,81 @@
-<div class="bg" style="width: 80%;">
-  <h1> Book Details</h1>
-</div>
-<div class="card rp" style="width: 80%;">
-
+<div class="card rp" style="width: 90%;">
+  <div class="bg" style="width: 100%;">
+    <h1 class="text"> Book Details</h1>
+  </div>
   <div class="card-body">
+
     <div class="row">
-      <div class="col-md-3 col-sm-12 ">
-        <img style="width:100%" [src]='"https://bookcart.azurewebsites.net/Upload/"+detailId.coverFileName'>
+      <div class="col-md-3 col-sm-12 zoom">
+        <img [src]='"https://bookcart.azurewebsites.net/Upload/"+bookDetail.coverFileName'>
       </div>
 
 
 
 
       <div class="col-md-5 col-sm-12">
-        <div>Title-{{detailId.title}}</div>
-        <div>Author-{{detailId.author}}</div>
-        <div>Category-{{detailId.category}}</div>
-        <div>Price-{{detailId.price}}</div>
-        <button class = "btn btn-primary "><span style="size: 1px;" class="material-icons">shopping_cart</span>Add to cart</button>
-        <button class = "btn btn-primary ">Add to Whislist</button>
+        <div style="font-size: 15px;">
+          <table class="table">
+            <tr>
+              <td class="padding"><strong>Title</strong></td>
+              <td class="padding">{{bookDetail.title}}</td>
+            </tr>
+            <tr>
+              <td class="padding"><strong>Author</strong></td>
+              <td class="padding">{{bookDetail.author}}</td>
+            </tr>
+            <tr>
+              <td class="padding"><strong>category</strong></td>
+              <td class="padding">{{bookDetail.category}}</td>
+            </tr>
+            <tr>
+              <td class="padding"><strong>Price</strong></td>
+              <td class="padding">{{bookDetail.price}}</td>
+            </tr>
+          </table>
+        </div>
+
+        <div style="display:flex;justify-content:left ;align-items:center;">
+          <button class="btn btn-primary" 
+            style="margin:5px; display:flex;justify-content:space-between;align-items:center" (click) = "addToCart()" ><span style="size: 1px;"
+              class="material-icons" style="margin-right: 10px;">shopping_cart</span><span> Add to cart</span></button>
+          <button class="btn btn-primary" [ngStyle]="{'background-color':isPresentInWishlist? 'red' : 'green' }"
+            style="margin:5px; display:flex;justify-content:space-between;align-items:center " (click) = "addToWhisList()"><span
+              class="material-icons" style="margin-right: 10px;">
+              favorite
+            </span><span *ngIf="!isPresentInWishlist">Add to Whislist</span><span *ngIf="isPresentInWishlist">Remove from Whislist</span></button>
+           </div>
       </div>
     </div>
   </div>
 </div>
 
-
-<div class="bg" style="width: 80%;">
-  <h1> Similar Books</h1>
-</div>
-<div class="card rp" style="width: 80%;">
-
-  <div class="card-body">
+<br>
+<div class="card rp" style="width: 90%;">
+  <div class="bg" style="width: 100%;">
+    <h1 class="text"> Similar Books</h1>
+  </div>
+  <div class="card-body ">
     <div class="row">
-      <div class="card" style="width: 20%;" *ngFor="let item of similarId">
-        <img style="width: 100%;" [src]='"https://bookcart.azurewebsites.net/Upload/"+item.coverFileName'>
-        <div class="card-body" >
+      <div class="card shadow" style="width: calc(20% - 0.5rem);padding: 0;" *ngFor="let item of similarId">
+        <div style="height: 250px;" class="image">
+          <img style="height: 250px;width: 100%;"
+            [src]='"https://bookcart.azurewebsites.net/Upload/"+item.coverFileName'>
+            <div class="content" style = "background-color: gray; border-radius: 0.25rem;"><P style="color: white;margin: 0;">{{item.title}}</P></div>
+        
+        </div>
+        <div class="material-icons absolute"
+          style="color: gray; background-color: white; height: 30px; width: 30px; border-radius: 15px; padding: 2.5px;">
+          <span>
+            favorite
+          </span>
+        </div>
+        <div class="card-body">
 
           <p style="color: blue;"><b>{{item.title}}</b></p>
           <p>{{item.price}}</p>
-          <button class = "btn btn-secondary "><span class="material-icons">shopping_cart</span>Add to cart</button>
+          <button class="btn btn-secondary " style="display:flex;justify-content:space-between;align-items:center;" 
+            ><span class="material-icons" style="margin-right: 10px ;">shopping_cart</span><span> Add
+              to cart</span></button>
 
         </div>
       </div>
