@@ -37,8 +37,7 @@
 
         <div class="detailsbtn">
           <button class="btn btn-primary additembtn" (click)="addToCart()">
-            <span class="material-icons" style="margin-right: 10px; size: 1px"
-              >shopping_cart</span
+            <span class="material-icons addCartIcon">shopping_cart</span
             ><span> Add to cart</span>
           </button>
           <button
@@ -48,8 +47,7 @@
             }"
             (click)="addToWhisList()"
           >
-            <span class="material-icons" style="margin-right: 10px">
-              favorite </span
+            <span class="material-icons addWhisListIcon"> favorite </span
             ><span *ngIf="!isPresentInWishlist">Add to Whislist</span
             ><span *ngIf="isPresentInWishlist">Remove from Whislist</span>
           </button>
@@ -79,21 +77,20 @@
             "
           />
 
-          <div class="content hoverOnTitle">
-            <P style="color: white; margin: 0">{{ item.title }}</P>
+          <div class="content hoverTitlePos">
+            <P class="hoverTitle">{{ item.title }}</P>
           </div>
         </div>
-        <div class="material-icons absolute hearticon">
+        <div class="material-icons absolute hearticonpos">
           <span> favorite </span>
         </div>
         <div class="card-body">
-          <p style="color: blue">
+          <p class="title">
             <b>{{ item.title }}</b>
           </p>
           <p>{{ item.price }}</p>
           <button class="btn btn-secondary addbtn">
-            <span class="material-icons" style="margin-right: 10px; size: 1px"
-              >shopping_cart</span
+            <span class="material-icons addCartIcon">shopping_cart</span
             ><span> Add to cart</span>
           </button>
         </div>

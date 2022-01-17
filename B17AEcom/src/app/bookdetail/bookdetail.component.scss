@@ -67,7 +67,7 @@
 .detailsbtn {
   display: flex;
 }
-.hearticon {
+.hearticonpos {
   color: gray;
   background-color: white;
   height: 30px;
@@ -75,7 +75,21 @@
   border-radius: 15px;
   padding: 2.5px;
 }
-.hoverOnTitle {
+.hoverTitlepos {
   background-color: gray;
   border-radius: 0.25rem;
+}
+.addCartIcon {
+  margin-right: 10px;
+  size: 1px;
+}
+.addWhisListIcon {
+  margin-right: 10px;
+}
+.hoverTitle {
+  color: white;
+  margin: 0;
+}
+.title {
+  color: blue;
 }
