@@ -59,3 +59,23 @@
   outline: none;
   box-shadow: none;
 }
+.additembtn {
+  margin: 5px;
+  display: flex;
+}
+.addbtn,
+.detailsbtn {
+  display: flex;
+}
+.hearticon {
+  color: gray;
+  background-color: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  padding: 2.5px;
+}
+.hoverOnTitle {
+  background-color: gray;
+  border-radius: 0.25rem;
+}

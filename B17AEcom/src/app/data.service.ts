@@ -32,7 +32,7 @@ getBooksFromWishlist(){
 addToWhisList(bookId :any){
   this.url = "https://bookcart.azurewebsites.net/api/Wishlist/ToggleWishlist/" + this.userId + "/" + bookId
   return this.http.post<any>(this.url,{},{headers:(new HttpHeaders().set(
-    "Authorization","Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhamF5ZCIsInVzZXJpZCI6IjQ0NSIsInVzZXJUeXBlSWQiOiIyIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMiIsImp0aSI6IjExYTJmZjY5LWFjZTYtNGJlNi1iODdlLTdkNDYwNWVkOWMyMCIsImV4cCI6MTY0MjA4Njk1MSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzNjQvIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzNjQvIn0.uWDi2PO8jIS2-_ro38dukDPS3y1PlEeabzkbKvB-7A8"
+    "Authorization","Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhamF5ZCIsInVzZXJpZCI6IjQ0NSIsInVzZXJUeXBlSWQiOiIyIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMiIsImp0aSI6Ijg1YjMyYTM3LWFmMGUtNGU3NS04NjgxLTg4NDA3MTQyMjQ2MSIsImV4cCI6MTY0MjI1Mzc2NywiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzNjQvIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzNjQvIn0.9BZIxfkdnEBaMC5lBMgl8z-xWQMiba5zj9C06qQCRcI"
     
   ))})
 }
